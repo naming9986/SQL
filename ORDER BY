@@ -1,0 +1,3 @@
+SELECT 列字段名 FROM [工作表名称$] ORDER BY 指定列字段名 升序(降序)
+Select * FROM [Sheet1$] ORDER BY 成绩 ASC\DESC
+Select * FROM [Sheet1$] ORDER BY 英语 DESC,数学 DESC
