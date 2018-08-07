@@ -1,0 +1,6 @@
+SELECT 列字段名称 FROM [表名称$] WHERE 列字段名 运算符 值
+运算符包含大于、小于、等于、不等于、大于或等于、小于或等于、IN、 BETWEEN、AND等
+SELECT * FROM [Sheet1$] where 消费金额=100
+
+SELECT 列字段名 FROM [工作表名称$] ORDER BY 指定列字段名 升序(降序)
+
