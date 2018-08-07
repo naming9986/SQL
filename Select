@@ -65,6 +65,23 @@ strSQL = "Select Distinct 用户姓名,用户卡号 From [sheet1$]"  '同时相�
 张四	10000002
 
 '-------------------------------------------------------------------'
+select Top
+SELECT TOP 3 * FROM [工作表名$]  '只要前三条
+SELECT TOP 3 字段名 FROM [工作表名] ORDER BY 字段名  '升序'
+SELECT TOP 3 字段名 FROM [工作表名] ORDER BY 字段名 DESC
+Select TOP 30 PERCENT * FROM [Sheet1$A1:C17]  ORDER BY 成绩 DESC '向上取整'
+strSQL = "Select top 3 * FROM [Sheet1$A1:C17]  ORDER BY 成绩 DESC"
 
 
+---------------------------------------------------------------------
+一般是从后往前执行
+Group By 与 函数
+SELECT COUNT(列字段) AS 别名1 FROM [工作表名$]
+Select AVG(列字段) as 别名 FROM [工作表名$]-
+Select Sum(列字段) as 别名 FROM [工作表名$]'
+Select MAX(列字段) as 别名 FROM [工作表名$]
+Select MIN(列字段) as 别名 FROM [工作表名$]
+Select AVG(成绩) as 大于60的平均分,SUM(成绩) as 大于60的总分,COUNT(成绩) as 大于60的人数  FROM [Sheet1$] WHERE 成绩>60 ''先执行where 然后执行函数
 
+SELECT 日期, 姓名, SUM(产品数) as 产品总数 From [Sheet1$] GROUP BY 日期, 姓名
+SELECT MONTH(日期) as 月份,姓名, SUM(产品数) as 产品总数 From [Sheet1$] GROUP BY MONTH(日期),姓名
