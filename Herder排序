@@ -1,0 +1,45 @@
+Set cnn = CreateObject("adodb.connection")
+Set rst = CreateObject("adodb.recordset")
+cnn.Open "Provider=Microsoft.jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" & ThisWorkbook.FullName
+SQL = "select 交货单号,发货仓库 from [数据表格$]"
+Set rst = cnn.Execute(SQL)
+Sheets("展示表格").Range("a2").CopyFromRecordset rst
+rst.Close
+cnn.Close
+Set rst = Nothing
+Set cnn = Nothing
+
+发货仓库	ReqDelDt	交货单号
+CNC8	2013/3/17	12345
+CNC8	2013/3/17	12678
+CNC8	2013/3/17	13011
+CNC8	2013/3/17	13344
+CNC8	2013/3/17	13677
+CNC8	2013/3/17	14010
+CNC8	2013/3/17	14343
+CNC8	2013/3/17	14676
+CNC8	2013/3/17	15009
+CNC8	2013/3/17	15342
+CNC8	2013/3/17	15675
+CNC8	2013/3/17	16008
+CNC8	2013/3/17	16341
+CNC8	2013/3/17	16674
+CNC8	2013/3/17	17007
+
+
+交货单号	发货仓库
+12345	CNC8
+12678	CNC8
+13011	CNC8
+13344	CNC8
+13677	CNC8
+14010	CNC8
+14343	CNC8
+14676	CNC8
+15009	CNC8
+15342	CNC8
+15675	CNC8
+16008	CNC8
+16341	CNC8
+16674	CNC8
+17007	CNC8
